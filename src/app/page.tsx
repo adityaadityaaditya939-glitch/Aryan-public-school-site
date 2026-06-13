@@ -1,65 +1,157 @@
 import Image from "next/image";
+import Link from "next/link";
+import HeroSection from "@/components/HeroSection";
+import MessageCard from "@/components/MessageCard";
+import AnnouncementsList from "@/components/AnnouncementsList";
+import { SCHOOL, IMAGES } from "@/lib/constants";
 
-export default function Home() {
+const stats = [
+  { value: "20+", label: "Years of Legacy" },
+  { value: "100%", label: "Dedicated Faculty" },
+  { value: "500+", label: "Students Enrolled" },
+  { value: "15+", label: "Experienced Teachers" },
+];
+
+const pillars = [
+  { title: "Academics", desc: "Strong foundation in core subjects with modern teaching methods." },
+  { title: "Values", desc: "Character building through discipline, respect, and integrity." },
+  { title: "Activities", desc: "Sports, arts, and cultural programs for holistic development." },
+  { title: "Community", desc: "A supportive environment for students, parents, and staff." },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <HeroSection />
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <div className="overflow-hidden rounded-2xl bg-white shadow-xl">
+          <div className="grid lg:grid-cols-2">
+            <div className="relative min-h-[300px]">
+              <Image
+                src={IMAGES.building}
+                alt="School campus"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-8 lg:p-12">
+              <h2 className="font-serif text-3xl font-bold text-aps-navy">
+                Why Choose {SCHOOL.name}?
+              </h2>
+              <p className="mt-4 text-gray-600">
+                With over two decades of commitment to quality education, we nurture
+                every child to reach their full potential in a safe and inspiring environment.
+              </p>
+              <div className="mt-8 grid grid-cols-2 gap-6">
+                {stats.map((stat) => (
+                  <div key={stat.label} className="border-l-4 border-aps-gold pl-4">
+                    <p className="text-2xl font-bold text-aps-navy">{stat.value}</p>
+                    <p className="text-sm text-gray-500">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-wider text-aps-magenta">About</p>
+            <h2 className="mt-2 font-serif text-3xl font-bold text-aps-navy md:text-4xl">
+              {SCHOOL.name}
+            </h2>
+            <p className="mx-auto mt-4 max-w-3xl text-gray-600">
+              Located in {SCHOOL.location}, {SCHOOL.name} has been a beacon of learning
+              for over 20 years. Our motto — {SCHOOL.tagline} — reflects our promise to
+              every student and parent who walks through our doors.
+            </p>
+            <Link
+              href="/about"
+              className="mt-6 inline-block rounded bg-aps-navy px-6 py-3 text-sm font-semibold text-white hover:bg-aps-magenta"
+            >
+              Read More
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <h2 className="text-center font-serif text-3xl font-bold text-aps-navy">
+          Life at Our School
+        </h2>
+        <p className="mx-auto mt-3 max-w-2xl text-center text-gray-600">
+          A balanced approach to education covering academics, values, activities, and community.
+        </p>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {pillars.map((pillar) => (
+            <div
+              key={pillar.title}
+              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md"
+            >
+              <div className="mb-4 h-1 w-12 rounded bg-aps-magenta" />
+              <h3 className="font-semibold text-aps-navy">{pillar.title}</h3>
+              <p className="mt-2 text-sm text-gray-600">{pillar.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-gray-50 py-16">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <h2 className="text-center font-serif text-3xl font-bold text-aps-navy">
+            Leadership Messages
+          </h2>
+          <div className="mt-10 grid gap-8 lg:grid-cols-2">
+            <MessageCard
+              title="Message from the Chairman"
+              name="Chairman, Aryan Public School"
+              image={IMAGES.chairman}
+              preview="It is my privilege to lead an institution that has shaped young minds for over two decades. Our commitment remains steadfast — to provide quality education with dedication."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <MessageCard
+              title="Message from the Principal"
+              name="Principal, Aryan Public School"
+              image={IMAGES.principal}
+              preview="At Aryan Public School, we believe every child is unique. Our teachers work tirelessly to create an environment where students learn, grow, and excel with confidence."
+            />
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
+        <h2 className="font-serif text-3xl font-bold text-aps-navy">
+          Important Announcements & Links
+        </h2>
+        <div className="mt-8">
+          <AnnouncementsList />
+        </div>
+      </section>
+
+      <section className="bg-aps-navy py-16 text-white">
+        <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
+          <h2 className="font-serif text-3xl font-bold">Ready to Join Us?</h2>
+          <p className="mx-auto mt-4 max-w-xl text-gray-300">
+            Begin your child&apos;s journey with {SCHOOL.name}. Apply online or visit our campus.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/admissions"
+              className="rounded bg-aps-gold px-8 py-3 font-semibold text-aps-navy hover:bg-yellow-400"
+            >
+              Apply Now
+            </Link>
+            <Link
+              href="/contact"
+              className="rounded border-2 border-white px-8 py-3 font-semibold hover:bg-white/10"
+            >
+              Contact Us
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

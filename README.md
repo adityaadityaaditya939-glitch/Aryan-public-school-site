@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aryan Public School Website
+
+Official website for **Aryan Public School** — a fully functional school portal with admissions, authentication, announcements, and admin data export.
+
+## Features
+
+- **Public website** — Home, About, Admissions, Contact, Feedback
+- **Student admission form** — Submissions stored in Neon PostgreSQL
+- **Authentication portals** — Separate login for Students, Teachers, and Admin
+- **Complaints / feedback** — Students and parents can submit concerns
+- **Teacher announcements** — Teachers publish updates that appear in "Important Announcements & Links"
+- **Admin dashboard** — View stats, review submissions, update statuses, create student/teacher accounts, and download data as **CSV or Excel**
+
+## Tech Stack
+
+- **Frontend:** Next.js 16, TypeScript, Tailwind CSS
+- **Backend:** Next.js API Routes (Node.js)
+- **Database:** Neon PostgreSQL
+- **Auth:** JWT (httpOnly cookies) + bcrypt password hashing
+- **Hosting:** Vercel (recommended)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
+
+```bash
+cd aryan-public-school
+npm install
+```
+
+### 2. Configure environment
+
+Copy `.env.example` to `.env.local` and fill in your values:
+
+```bash
+cp .env.example .env.local
+```
+
+When deploying to Vercel with Neon integration, `DATABASE_URL` is injected automatically.
+
+### 3. Initialize the database
+
+**Option A — CLI script (recommended):**
+
+```bash
+npm run db:setup
+```
+
+**Option B — API route (after starting the dev server):**
+
+```bash
+curl -X POST http://localhost:3000/api/setup -H "x-setup-secret: YOUR_SETUP_SECRET"
+```
+
+This creates all tables and a default admin account.
+
+### 4. Run locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Default Admin Login
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+After setup:
+- **Email:** `admin@aryanpublicschool.edu.in` (or your `ADMIN_EMAIL`)
+- **Password:** `Admin@12345` (or your `ADMIN_PASSWORD`)
+- **Role:** Admin
 
-## Learn More
+> Change the admin password immediately after first login in production.
 
-To learn more about Next.js, take a look at the following resources:
+## Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Push this project to GitHub
+2. Import the repo in [Vercel](https://vercel.com)
+3. Connect your Neon database via the Vercel dashboard (Neon integration)
+4. Add `JWT_SECRET` and `SETUP_SECRET` in Vercel Environment Variables
+5. Deploy, then call `/api/setup` once to initialize the database
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Adding Users
 
-## Deploy on Vercel
+**From the Admin dashboard:** Go to the **Users** tab and create student or teacher accounts with email and password.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Via SQL** (alternative):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```sql
+INSERT INTO users (email, password_hash, full_name, role)
+VALUES ('teacher@school.edu', '$2a$12$...', 'Teacher Name', 'teacher');
+```
+
+Use bcrypt to hash passwords (cost factor 12).
+
+## Project Structure
+
+```
+src/
+├── app/              # Pages and API routes
+├── components/       # Reusable UI components
+├── lib/              # Database, auth, validation, export utilities
+└── middleware.ts     # Route protection for dashboards
+public/images/        # School photos and logo
+```
+
+## Security Notes
+
+- Passwords are hashed with bcrypt (12 rounds)
+- Sessions use httpOnly, secure cookies
+- Admin export and setup routes require authentication/secrets
+- Input validation with Zod on all form submissions

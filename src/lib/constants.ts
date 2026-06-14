@@ -2,18 +2,18 @@ export const SCHOOL = {
   name: "Aryan Public School",
   tagline: "Commitment · Quality · Dedication",
   legacy: "20+ Years of Excellence",
-  location: "Aryan Public School, Kansakoti, India",
-  phone: "+91 XXXXX XXXXX",
-  email: "info@aryanpublicschool.edu.in",
-  admissionEmail: "admissions@aryanpublicschool.edu.in",
+  location: "VPO Kansakoti, Tehsil Rohru, Distt. Shimla (H.P) 171207, India",
+  phone: "01781-240694, +91 98174-74844",
+  email: "aryanlalit844@gmail.com",
+  admissionEmail: "aryanlalit844@gmail.com",
 } as const;
 
 export const IMAGES = {
-  logo: "/images/logo.png",
-  building: "/images/building.jpg",
-  chairman: "/images/chairman.jpg",
-  principal: "/images/principal.jpg",
-  staffGroup: "/images/staff-group.jpg",
+  logo: "/images/logo.jpg",
+  building: "/images/school.jpg",
+  chairman: "/images/chairman.png",
+  principal: "/images/principle.jpg",
+  staffGroup: "/images/staff.png",
 } as const;
 
 export const ROLES = ["student", "teacher", "admin"] as const;

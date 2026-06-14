@@ -4,7 +4,7 @@ import type { Role } from "@/lib/constants";
 
 const PROTECTED_PREFIXES = ["/dashboard"];
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const isProtected = PROTECTED_PREFIXES.some((prefix) =>

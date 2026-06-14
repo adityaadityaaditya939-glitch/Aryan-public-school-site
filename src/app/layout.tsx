@@ -19,6 +19,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: `${SCHOOL.name} | ${SCHOOL.legacy}`,
   description: `Official website of ${SCHOOL.name}. ${SCHOOL.tagline}. Admissions, announcements, and school portal.`,
+  icons: {
+    icon: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({

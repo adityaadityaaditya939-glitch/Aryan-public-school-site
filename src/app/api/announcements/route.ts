@@ -53,3 +53,26 @@ export async function POST(request: Request) {
     return jsonError("Failed to create announcement", 500);
   }
 }
+
+export async function DELETE(request: Request) {
+  const session = await getSession();
+  const authError = requireAuth(session, ["admin"]);
+  if (authError) return authError;
+
+  try {
+    const { searchParams } = new URL(request.url);
+    const id = searchParams.get("id");
+
+    if (!id) {
+      return jsonError("Announcement ID is required", 400);
+    }
+
+    const sql = getDb();
+    await sql`DELETE FROM announcements WHERE id = ${id}`;
+
+    return jsonSuccess({ message: "Announcement deleted" });
+  } catch (error) {
+    console.error("Announcement delete error:", error);
+    return jsonError("Failed to delete announcement", 500);
+  }
+}

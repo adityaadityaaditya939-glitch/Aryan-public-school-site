@@ -2,7 +2,11 @@
 
 import { useState } from "react";
 
-export default function AnnouncementForm() {
+interface AnnouncementFormProps {
+  onPosted?: () => void;
+}
+
+export default function AnnouncementForm({ onPosted }: AnnouncementFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -38,6 +42,7 @@ export default function AnnouncementForm() {
       setStatus("success");
       setMessage(data.message);
       form.reset();
+      onPosted?.();
     } catch {
       setStatus("error");
       setMessage("Something went wrong.");

@@ -39,11 +39,20 @@ interface Complaint {
   created_at: string;
 }
 
+interface Announcement {
+  id: number;
+  title: string;
+  content: string;
+  category: string;
+  link_url?: string | null;
+  created_at: string;
+}
+
 interface AdminDashboardProps {
   adminName: string;
 }
 
-type Tab = "overview" | "admissions" | "complaints" | "users";
+type Tab = "overview" | "admissions" | "complaints" | "users" | "announcements";
 
 export default function AdminDashboard({ adminName }: AdminDashboardProps) {
   const [tab, setTab] = useState<Tab>("overview");
@@ -56,6 +65,7 @@ export default function AdminDashboard({ adminName }: AdminDashboardProps) {
   const [users, setUsers] = useState<User[]>([]);
   const [admissions, setAdmissions] = useState<Admission[]>([]);
   const [complaints, setComplaints] = useState<Complaint[]>([]);
+  const [announcements, setAnnouncements] = useState<Announcement[]>([]);
 
   const loadStats = useCallback(() => {
     fetch("/api/admin/stats")
@@ -85,12 +95,20 @@ export default function AdminDashboard({ adminName }: AdminDashboardProps) {
       .catch(() => {});
   }, []);
 
+  const loadAnnouncements = useCallback(() => {
+    fetch("/api/announcements")
+      .then((res) => res.json())
+      .then((data) => setAnnouncements(data.announcements || []))
+      .catch(() => {});
+  }, []);
+
   useEffect(() => {
     loadStats();
     loadUsers();
     loadAdmissions();
     loadComplaints();
-  }, [loadStats, loadUsers, loadAdmissions, loadComplaints]);
+    loadAnnouncements();
+  }, [loadStats, loadUsers, loadAdmissions, loadComplaints, loadAnnouncements]);
 
   function download(type: "admissions" | "complaints", format: "csv" | "xlsx") {
     window.location.href = `/api/admin/export?type=${type}&format=${format}`;
@@ -116,11 +134,20 @@ export default function AdminDashboard({ adminName }: AdminDashboardProps) {
     loadStats();
   }
 
+  async function deleteAnnouncement(id: number) {
+    await fetch(`/api/announcements?id=${id}`, {
+      method: "DELETE",
+    });
+    setAnnouncements((prev) => prev.filter((a) => a.id !== id));
+    loadStats();
+  }
+
   const tabs: { id: Tab; label: string }[] = [
     { id: "overview", label: "Overview" },
     { id: "admissions", label: "Admissions" },
     { id: "complaints", label: "Complaints" },
     { id: "users", label: "Users" },
+    { id: "announcements", label: "Announcements" },
   ];
 
   return (
@@ -202,7 +229,7 @@ export default function AdminDashboard({ adminName }: AdminDashboardProps) {
                 Admins can also publish updates to the public site.
               </p>
               <div className="mt-4">
-                <AnnouncementForm />
+                <AnnouncementForm onPosted={() => { loadAnnouncements(); loadStats(); }} />
               </div>
             </section>
           </div>
@@ -366,6 +393,60 @@ export default function AdminDashboard({ adminName }: AdminDashboardProps) {
                     <span className="rounded bg-aps-navy/10 px-2 py-0.5 text-xs font-semibold capitalize text-aps-navy">
                       {user.role}
                     </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        </div>
+      )}
+
+      {tab === "announcements" && (
+        <div className="grid gap-8 lg:grid-cols-2">
+          <section className="rounded-xl border border-gray-200 bg-white p-6">
+            <h2 className="text-lg font-semibold text-aps-navy">Post Announcement</h2>
+            <p className="mt-1 text-sm text-gray-500">
+              Admins can publish updates to the public site.
+            </p>
+            <div className="mt-4">
+              <AnnouncementForm onPosted={() => { loadAnnouncements(); loadStats(); }} />
+            </div>
+          </section>
+
+          <section className="rounded-xl border border-gray-200 bg-white p-6">
+            <h2 className="text-lg font-semibold text-aps-navy">All Announcements</h2>
+            {announcements.length === 0 ? (
+              <p className="mt-4 text-sm text-gray-500">No announcements yet.</p>
+            ) : (
+              <ul className="mt-4 max-h-96 space-y-3 overflow-y-auto">
+                {announcements.map((item) => (
+                  <li key={item.id} className="flex items-start justify-between gap-3 border-b pb-3">
+                    <div className="flex-1">
+                      <span className="rounded bg-aps-gold/10 px-2 py-0.5 text-xs font-semibold uppercase text-aps-gold">
+                        {item.category}
+                      </span>
+                      <h4 className="mt-1 font-semibold text-aps-navy">{item.title}</h4>
+                      <p className="mt-1 text-sm text-gray-600">{item.content}</p>
+                      {item.link_url && (
+                        <a
+                          href={item.link_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-1 inline-block text-xs font-medium text-aps-magenta hover:underline"
+                        >
+                          Open link →
+                        </a>
+                      )}
+                      <p className="mt-1 text-xs text-gray-400">
+                        {new Date(item.created_at).toLocaleDateString()}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => deleteAnnouncement(item.id)}
+                      className="shrink-0 rounded border border-red-200 px-3 py-1 text-xs font-semibold text-red-600 hover:bg-red-50"
+                    >
+                      Delete
+                    </button>
                   </li>
                 ))}
               </ul>

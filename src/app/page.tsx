@@ -3,6 +3,7 @@ import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
 import MessageCard from "@/components/MessageCard";
 import AnnouncementsList from "@/components/AnnouncementsList";
+import { Slideshow } from "@/components/Slideshow";
 import { SCHOOL, IMAGES } from "@/lib/constants";
 
 const stats = [
@@ -25,16 +26,9 @@ export default function HomePage() {
       <HeroSection />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <div className="overflow-hidden rounded-2xl bg-white shadow-xl">
+        <div className="overflow-hidden rounded-3xl bg-white shadow-xl transition-all duration-300 hover:shadow-2xl">
           <div className="grid lg:grid-cols-2">
-            <div className="relative min-h-[300px]">
-              <Image
-                src={IMAGES.building}
-                alt="School campus"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <Slideshow images={IMAGES.slideshow} />
             <div className="p-8 lg:p-12">
               <h2 className="font-serif text-3xl font-bold text-aps-navy">
                 Why Choose {SCHOOL.name}?

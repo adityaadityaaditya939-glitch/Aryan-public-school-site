@@ -19,8 +19,8 @@ export default function MessageCard({ title, name, image, preview }: MessageCard
             Read Message →
           </span>
         </div>
-        <div className="relative h-64 md:col-span-3 md:h-auto md:min-h-[280px]">
-          <Image src={image} alt={name} fill className="object-cover object-top" />
+        <div className="relative h-80 md:col-span-3 md:h-auto md:min-h-[280px]">
+          <Image src={image} alt={name} fill className="object-cover object-center" />
         </div>
       </div>
       <div className="border-t px-6 py-4">

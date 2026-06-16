@@ -9,8 +9,9 @@ export default function HeroSection() {
         src={IMAGES.building}
         alt={`${SCHOOL.name} campus`}
         fill
-        className="object-cover"
+        className="object-cover object-center lg:object-cover"
         priority
+        sizes="100vw"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-aps-navy/90 via-aps-navy/70 to-transparent" />
       <div className="relative mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-center px-4 py-20 lg:px-8">

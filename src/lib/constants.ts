@@ -14,6 +14,16 @@ export const IMAGES = {
   chairman: "/images/chairman.png",
   principal: "/images/principle.jpg",
   staffGroup: "/images/staff.png",
+  slideshow: [
+    "/images/SportsFootball.jpg",
+    "/images/SportsTaekwondo.jpg",
+    "/images/Sportsachievements.jpg",
+    "/images/Sportsresult2.jpg",
+    "/images/Sportsresult3.jpg",
+    "/images/acedimics.jpg",
+    "/images/acedimics2.jpg",
+    "/images/anchoring.jpg",
+  ],
 } as const;
 
 export const ROLES = ["student", "teacher", "admin"] as const;

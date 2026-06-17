@@ -4,7 +4,7 @@ import { SCHOOL, IMAGES } from "@/lib/constants";
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">
-      <div className="relative mb-12 overflow-hidden rounded-2xl">
+      <div className="relative mb-12 overflow-hidden rounded-3xl">
         <Image
           src={IMAGES.building}
           alt="School building"
@@ -41,14 +41,14 @@ export default function AboutPage() {
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2">
-            <div className="rounded-xl border border-gray-200 p-6">
+            <div className="rounded-2xl border border-gray-200 p-6">
               <h3 className="font-semibold text-aps-navy">Our Mission</h3>
               <p className="mt-2 text-sm text-gray-600">
                 To provide holistic education that develops intellectual curiosity,
                 moral integrity, and social responsibility in every student.
               </p>
             </div>
-            <div className="rounded-xl border border-gray-200 p-6">
+            <div className="rounded-2xl border border-gray-200 p-6">
               <h3 className="font-semibold text-aps-navy">Our Vision</h3>
               <p className="mt-2 text-sm text-gray-600">
                 To be a leading educational institution that empowers students to
@@ -64,7 +64,7 @@ export default function AboutPage() {
             alt="School staff"
             width={400}
             height={500}
-            className="rounded-xl object-cover shadow-lg"
+            className="rounded-2xl object-cover shadow-lg"
           />
           <p className="mt-4 text-center text-sm text-gray-500">
             Our dedicated team of educators

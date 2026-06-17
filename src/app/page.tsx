@@ -39,7 +39,7 @@ export default function HomePage() {
               </p>
               <div className="mt-8 grid grid-cols-2 gap-6">
                 {stats.map((stat) => (
-                  <div key={stat.label} className="border-l-4 border-aps-gold pl-4">
+                  <div key={stat.label} className="rounded-2xl border-l-4 border-aps-gold pl-4 py-4">
                     <p className="text-2xl font-bold text-aps-navy">{stat.value}</p>
                     <p className="text-sm text-gray-500">{stat.label}</p>
                   </div>
@@ -83,9 +83,9 @@ export default function HomePage() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md"
+              className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition hover:shadow-md"
             >
-              <div className="mb-4 h-1 w-12 rounded bg-aps-magenta" />
+              <div className="mb-4 h-1 w-12 rounded-full bg-aps-magenta" />
               <h3 className="font-semibold text-aps-navy">{pillar.title}</h3>
               <p className="mt-2 text-sm text-gray-600">{pillar.desc}</p>
             </div>
@@ -102,13 +102,13 @@ export default function HomePage() {
             <MessageCard
               title="Message from the Chairman"
               name="Chairman, Aryan Public School"
-              image={IMAGES.chairman}
+              images={IMAGES.chairmanSlideshow}
               preview="It is my privilege to lead an institution that has shaped young minds for over two decades. Our commitment remains steadfast — to provide quality education with dedication."
             />
             <MessageCard
               title="Message from the Principal"
               name="Principal, Aryan Public School"
-              image={IMAGES.principal}
+              images={IMAGES.principalSlideshow}
               preview="At Aryan Public School, we believe every child is unique. Our teachers work tirelessly to create an environment where students learn, grow, and excel with confidence."
             />
           </div>
@@ -133,13 +133,13 @@ export default function HomePage() {
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/admissions"
-              className="rounded bg-aps-gold px-8 py-3 font-semibold text-aps-navy hover:bg-yellow-400"
+              className="rounded-xl bg-aps-gold px-8 py-3 font-semibold text-aps-navy hover:bg-yellow-400"
             >
               Apply Now
             </Link>
             <Link
               href="/contact"
-              className="rounded border-2 border-white px-8 py-3 font-semibold hover:bg-white/10"
+              className="rounded-xl border-2 border-white px-8 py-3 font-semibold hover:bg-white/10"
             >
               Contact Us
             </Link>

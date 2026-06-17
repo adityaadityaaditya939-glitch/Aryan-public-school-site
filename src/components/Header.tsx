@@ -52,7 +52,7 @@ export default function Header() {
           ))}
           <Link
             href="/login"
-            className="rounded bg-aps-navy px-4 py-2 text-sm font-semibold text-white transition hover:bg-aps-magenta"
+            className="rounded-xl bg-aps-navy px-4 py-2 text-sm font-semibold text-white transition hover:bg-aps-magenta"
           >
             Portal Login
           </Link>
@@ -61,7 +61,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="rounded border border-aps-navy px-3 py-2 text-sm font-semibold text-aps-navy lg:hidden"
+          className="rounded-xl border border-aps-navy px-3 py-2 text-sm font-semibold text-aps-navy lg:hidden"
           aria-label="Toggle menu"
         >
           {menuOpen ? "Close" : "Menu"}
@@ -84,7 +84,7 @@ export default function Header() {
             <Link
               href="/login"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 rounded bg-aps-gold px-4 py-2 text-center text-sm font-semibold text-aps-navy"
+              className="mt-2 rounded-xl bg-aps-gold px-4 py-2 text-center text-sm font-semibold text-aps-navy"
             >
               Portal Login
             </Link>

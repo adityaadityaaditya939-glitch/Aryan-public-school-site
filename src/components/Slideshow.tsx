@@ -23,7 +23,7 @@ export function Slideshow({ images }: { images: readonly string[] }) {
   }, [nextSlide]);
 
   return (
-    <div className="relative h-[300px] overflow-hidden rounded-3xl border-4 border-aps-navy/10 shadow-xl transition-all duration-300 hover:shadow-2xl lg:h-[500px]">
+    <div className="relative h-[300px] overflow-hidden rounded-[2.5rem] border-4 border-aps-navy/20 shadow-xl transition-all duration-300 hover:shadow-2xl lg:h-[500px]">
       {images.map((src, index) => (
         <div
           key={index}

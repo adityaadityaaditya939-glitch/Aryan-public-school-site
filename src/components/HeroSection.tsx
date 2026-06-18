@@ -35,7 +35,7 @@ export default function HeroSection() {
                 src={src}
                 alt={`${SCHOOL.name} campus - slide ${index + 1}`}
                 fill
-                className="object-cover object-top"
+                className="object-cover object-top brightness-[0.85]"
                 priority={index === 0}
                 sizes="100vw"
               />
@@ -85,7 +85,6 @@ export default function HeroSection() {
           />
         ))}
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }

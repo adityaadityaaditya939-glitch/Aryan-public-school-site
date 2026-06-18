@@ -36,6 +36,7 @@ export const IMAGES = {
     "/images/acedimics.jpg",
     "/images/acedimics2.jpg",
     "/images/anchoring.jpg",
+    "/images/shorya.jpeg",
   ],
 } as const;
 

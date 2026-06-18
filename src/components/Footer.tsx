@@ -25,6 +25,16 @@ export default function Footer() {
             <li>{SCHOOL.phone}</li>
             <li>{SCHOOL.email}</li>
             <li>Admissions: {SCHOOL.admissionEmail}</li>
+            <li>
+              <a
+                href="https://www.facebook.com/www.aryanpublicschool.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-aps-gold"
+              >
+                Facebook Page
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -56,7 +66,20 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-xs text-gray-400">
-        © {new Date().getFullYear()} {SCHOOL.name}. All rights reserved.
+        <div className="flex flex-col items-center gap-2">
+          <span>© {new Date().getFullYear()} {SCHOOL.name}. All rights reserved.</span>
+          <span>
+            Powered by{" "}
+            <a
+              href="https://tech-explorer-nine.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-aps-gold hover:underline"
+            >
+              Tech Explorer
+            </a>
+          </span>
+        </div>
       </div>
     </footer>
   );

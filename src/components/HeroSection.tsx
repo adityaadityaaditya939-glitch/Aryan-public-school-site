@@ -80,10 +80,10 @@ export default function HeroSection() {
           At {SCHOOL.name}, we are committed to excellence in education with
           dedication, quality, and a legacy of over two decades.
         </p>
-        <div className="mt-5 md:mt-10 flex flex-col gap-2 md:gap-4 animate-in slide-in-from-left duration-1000 ease-out delay-300">
+        <div className="mt-5 md:mt-10 flex flex-col items-start gap-2 md:gap-4 animate-in slide-in-from-left duration-1000 ease-out delay-300">
           <Link
             href="/admissions"
-            className="group relative overflow-hidden rounded-lg bg-aps-gold px-4 py-2.5 md:px-8 md:py-4 text-xs md:text-base font-bold text-aps-navy transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(245,184,0,0.5)] text-center inline-flex items-center justify-center gap-1.5 w-full sm:w-auto"
+            className="group relative overflow-hidden rounded-lg bg-aps-gold px-4 py-2.5 md:px-8 md:py-4 text-xs md:text-base font-bold text-aps-navy transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(245,184,0,0.5)] text-center inline-flex items-center justify-center gap-1.5 w-auto"
           >
             <span className="relative z-10 inline-flex items-center gap-1.5">
               <svg className="w-3.5 h-3.5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,7 +95,7 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/about"
-            className="group rounded-lg border-2 border-white/40 bg-white/10 px-4 py-2.5 md:px-8 md:py-4 text-xs md:text-base font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-aps-gold hover:bg-white/20 hover:shadow-[0_0_30px_rgba(245,184,0,0.3)] text-center inline-flex items-center justify-center gap-1.5 w-full sm:w-auto"
+            className="group rounded-lg border-2 border-white/40 bg-white/10 px-4 py-2.5 md:px-8 md:py-4 text-xs md:text-base font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-aps-gold hover:bg-white/20 hover:shadow-[0_0_30px_rgba(245,184,0,0.3)] text-center inline-flex items-center justify-center gap-1.5 w-auto"
           >
             <svg className="w-3.5 h-3.5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 90 11-18 0 9 9 0 0118 0z" />

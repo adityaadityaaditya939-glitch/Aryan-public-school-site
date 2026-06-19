@@ -50,7 +50,7 @@ export default function HeroSection() {
           key={index}
           className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
             index === currentIndex
-              ? "opacity-100 scale-100"
+              ? "opacity-100 scale-95 md:scale-100"
               : "opacity-0 scale-110"
           }`}
         >
@@ -58,7 +58,7 @@ export default function HeroSection() {
                 src={src}
                 alt={`${SCHOOL.name} campus - slide ${index + 1}`}
                 fill
-                className="object-cover object-top md:object-center brightness-[0.85]"
+                className="object-cover object-center brightness-[0.85]"
                 priority={index === 0}
                 sizes="100vw"
               />

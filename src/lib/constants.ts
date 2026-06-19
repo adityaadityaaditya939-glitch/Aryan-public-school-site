@@ -12,7 +12,7 @@ export const IMAGES = {
   logo: "/images/logo.jpg",
   building: "/images/school.jpg",
   heroSlideshow: [
-    "/images/school.jpg",
+    "/images/hero-sec1.1.jpg",
     "/images/hero-sec2.3.jpg",
     "/images/hero-sec-3.1.jpg",
     "/images/hero-sec-4.1.jpg",

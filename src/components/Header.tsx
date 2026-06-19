@@ -27,29 +27,29 @@ export default function Header() {
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-white/95 backdrop-blur-xl shadow-lg" : "bg-white shadow-md"}`}>
-      <div className="bg-gradient-to-r from-aps-navy via-aps-magenta to-aps-navy text-white text-center py-2 text-sm font-medium tracking-wide">
+      <div className="bg-gradient-to-r from-aps-navy via-aps-magenta to-aps-navy text-white text-center py-2 text-xs md:text-sm font-medium tracking-wide">
         {SCHOOL.legacy} · {SCHOOL.tagline}
       </div>
 
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
-        <Link href="/" className="flex items-center gap-3 group">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:py-4 lg:px-8">
+        <Link href="/" className="flex items-center gap-2 md:gap-3 group">
           <Image
             src={IMAGES.logo}
             alt={`${SCHOOL.name} logo`}
-            width={60}
-            height={60}
-            className="h-16 w-16 object-contain transition-transform duration-300 group-hover:scale-110"
+            width={50}
+            height={50}
+            className="h-12 w-12 md:h-16 md:w-16 object-contain transition-transform duration-300 group-hover:scale-110"
             priority
           />
           <div>
-            <p className="font-serif text-xl font-bold text-aps-navy leading-tight">
+            <p className="font-serif text-lg md:text-xl font-bold text-aps-navy leading-tight">
               {SCHOOL.name}
             </p>
-            <p className="text-xs text-gray-500">{SCHOOL.location}</p>
+            <p className="hidden md:block text-xs text-gray-500">{SCHOOL.location}</p>
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -57,7 +57,7 @@ export default function Header() {
               className="relative text-sm font-semibold uppercase tracking-wide text-aps-navy transition-all duration-300 hover:text-aps-magenta"
             >
               {link.label}
-              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-aps-navy to-aps-magenta transition-all duration-300 group-hover:w-full"></span>
+              <span className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-aps-navy to-aps-magenta transition-all duration-300 hover:w-full"></span>
             </Link>
           ))}
           <Link
@@ -72,22 +72,31 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="rounded-2xl border-2 border-aps-navy px-4 py-3 text-sm font-semibold text-aps-navy lg:hidden transition-all duration-300 hover:bg-aps-navy hover:text-white"
+          className="group relative flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-aps-navy lg:hidden transition-all duration-300 hover:bg-aps-navy hover:text-white"
           aria-label="Toggle menu"
         >
-          {menuOpen ? "Close" : "Menu"}
+          <div className="flex flex-col gap-1.5 transition-all duration-300">
+            <span className={`h-0.5 w-6 bg-aps-navy transition-all duration-300 group-hover:bg-white ${menuOpen ? "translate-y-2 rotate-45" : ""}`} />
+            <span className={`h-0.5 w-6 bg-aps-navy transition-all duration-300 group-hover:bg-white ${menuOpen ? "opacity-0" : "opacity-100"}`} />
+            <span className={`h-0.5 w-6 bg-aps-navy transition-all duration-300 group-hover:bg-white ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+          </div>
         </button>
       </div>
 
-      {menuOpen && (
-        <nav className="border-t bg-aps-navy px-6 py-6 lg:hidden">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+          menuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <nav className="border-t bg-aps-navy px-6 py-6">
+          <div className="flex flex-col gap-3">
+            {navLinks.map((link, idx) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-base font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:text-aps-gold"
+                className="animate-in slide-in-from-right text-base font-semibold uppercase tracking-wide text-white transition-all duration-300 hover:text-aps-gold"
+                style={{ animationDelay: `${idx * 50}ms` }}
               >
                 {link.label}
               </Link>
@@ -95,13 +104,14 @@ export default function Header() {
             <Link
               href="/login"
               onClick={() => setMenuOpen(false)}
-              className="mt-2 rounded-2xl bg-aps-gold px-6 py-3 text-center text-base font-semibold text-aps-navy transition-all duration-300 hover:scale-105"
+              className="mt-3 animate-in slide-in-from-right rounded-2xl bg-aps-gold px-6 py-3 text-center text-base font-semibold text-aps-navy transition-all duration-300 hover:scale-105"
+              style={{ animationDelay: `${navLinks.length * 50}ms` }}
             >
               Portal Login
             </Link>
           </div>
         </nav>
-      )}
+      </div>
     </header>
   );
 }

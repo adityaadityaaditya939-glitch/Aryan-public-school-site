@@ -15,7 +15,7 @@ export const IMAGES = {
     "/images/school.jpg",
     "/images/hero-sec2.3.jpg",
     "/images/hero-sec-3.1.jpg",
-    "/images/hero-sec-4.jpg",
+    "/images/hero-sec-4.1.jpg",
   ],
   chairmanSlideshow: [
     "/images/chairman1.jpg",

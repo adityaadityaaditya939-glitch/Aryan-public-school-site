@@ -120,6 +120,20 @@ export default function HeroSection() {
               Learn More
             </Link>
           </div>
+
+          {/* Stats row */}
+          <div className="animate-in slide-in-from-left duration-700 ease-out delay-400 grid grid-cols-3 gap-3 sm:gap-4 mt-6">
+            {[
+              { label: "Years Exp", value: "20+" },
+              { label: "Students", value: "300+" },
+              { label: "Staff", value: "30+" }
+            ].map((stat, idx) => (
+              <div key={idx} className="text-center p-3 sm:p-4 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10">
+                <div className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-aps-gold">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-gray-200 mt-1">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

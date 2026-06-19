@@ -80,18 +80,26 @@ export default function HeroSection() {
           At {SCHOOL.name}, we are committed to excellence in education with
           dedication, quality, and a legacy of over two decades.
         </p>
-        <div className="mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 animate-in slide-in-from-left duration-1000 ease-out delay-300">
+        <div className="mt-6 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 animate-in slide-in-from-left duration-1000 ease-out delay-300">
           <Link
             href="/admissions"
-            className="group relative overflow-hidden rounded-2xl bg-aps-gold px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold text-aps-navy transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(245,184,0,0.4)] text-center"
+            className="group relative overflow-hidden rounded-xl bg-aps-gold px-5 py-3 md:px-8 md:py-4 text-sm md:text-base font-bold text-aps-navy transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(245,184,0,0.5)] text-center inline-flex items-center justify-center gap-2"
           >
-            <span className="relative z-10">Apply for Admission</span>
+            <span className="relative z-10 inline-flex items-center gap-2">
+              <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              Apply for Admission
+            </span>
             <div className="absolute inset-0 bg-gradient-to-r from-yellow-300 to-aps-gold opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </Link>
           <Link
             href="/about"
-            className="group rounded-2xl border-2 border-white/30 bg-white/10 px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-aps-gold hover:bg-white/20 hover:shadow-[0_0_30px_rgba(245,184,0,0.2)] text-center"
+            className="group rounded-xl border-2 border-white/40 bg-white/10 px-5 py-3 md:px-8 md:py-4 text-sm md:text-base font-bold text-white backdrop-blur-md transition-all duration-300 hover:border-aps-gold hover:bg-white/20 hover:shadow-[0_0_30px_rgba(245,184,0,0.3)] text-center inline-flex items-center justify-center gap-2"
           >
+            <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
             Learn More
           </Link>
         </div>

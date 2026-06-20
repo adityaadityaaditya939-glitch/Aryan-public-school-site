@@ -16,6 +16,7 @@ export default function Footer() {
           />
           <p className="font-serif text-base md:text-lg font-bold">{SCHOOL.name}</p>
           <p className="mt-2 text-xs md:text-sm text-gray-300">{SCHOOL.tagline}</p>
+          <p className="mt-2 text-xs md:text-sm text-gray-300">{SCHOOL.location}</p>
         </div>
 
         <div>

@@ -28,15 +28,15 @@ export const IMAGES = {
   ],
   staffGroup: "/images/staff.png",
   slideshow: [
+    "/images/shorya.jpeg",
+    "/images/Sportsachievements.jpg",
+    "/images/anchoring.jpg",
+    "/images/Sportsresult2.jpg",
     "/images/SportsFootball.jpg",
     "/images/SportsTaekwondo.jpg",
-    "/images/Sportsachievements.jpg",
-    "/images/Sportsresult2.jpg",
     "/images/Sportsresult3.jpg",
     "/images/acedimics.jpg",
     "/images/acedimics2.jpg",
-    "/images/anchoring.jpg",
-    "/images/shorya.jpeg",
   ],
 } as const;
 

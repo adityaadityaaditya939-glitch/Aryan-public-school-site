@@ -86,6 +86,9 @@ export default function HeroSection() {
               Nurturing Minds,{" "}
               <span className="text-aps-gold">Building Futures</span>
             </h1>
+            <p className="mt-3 text-xs sm:text-sm text-gray-200 font-medium">
+              {SCHOOL.location}
+            </p>
           </div>
 
           {/* Description */}

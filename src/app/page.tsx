@@ -68,9 +68,6 @@ export default function HomePage() {
               <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-aps-navy">
                 {SCHOOL.name}
               </h2>
-              <p className="mx-auto mt-2 text-xs md:text-sm text-gray-500 font-medium">
-                {SCHOOL.location}
-              </p>
               <p className="mx-auto mt-4 md:mt-6 max-w-3xl text-sm md:text-lg text-gray-600 leading-relaxed">
                 {SCHOOL.name} has been a beacon of learning
                 for over 20 years. Our motto — {SCHOOL.tagline} — reflects our promise to

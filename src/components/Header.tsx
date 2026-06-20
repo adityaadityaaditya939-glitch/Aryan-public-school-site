@@ -47,7 +47,7 @@ export default function Header() {
             <p className="font-serif text-lg md:text-xl font-bold text-aps-navy leading-tight">
               {SCHOOL.name}
             </p>
-            <p className="hidden md:block text-xs text-gray-500">{SCHOOL.location}</p>
+            <p className="text-[10px] md:text-xs text-gray-500">{SCHOOL.location}</p>
           </div>
         </Link>
 

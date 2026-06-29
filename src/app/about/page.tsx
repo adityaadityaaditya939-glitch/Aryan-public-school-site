@@ -45,16 +45,48 @@ export default function AboutPage() {
             <div className="rounded-2xl border border-gray-200 p-6">
               <h3 className="font-semibold text-aps-navy">Our Mission</h3>
               <p className="mt-2 text-sm text-gray-600">
-                To provide holistic education that develops intellectual curiosity,
-                moral integrity, and social responsibility in every student.
+                To provide holistic education that develops intellectual curiosity, moral integrity, and social responsibility in every student.
               </p>
             </div>
             <div className="rounded-2xl border border-gray-200 p-6">
               <h3 className="font-semibold text-aps-navy">Our Vision</h3>
               <p className="mt-2 text-sm text-gray-600">
-                To be a leading educational institution that empowers students to
-                become confident, compassionate, and capable citizens.
+                To be a leading educational institution that empowers students to become confident, compassionate, and capable citizens.
               </p>
+            </div>
+          </div>
+
+          <div className="mt-12 rounded-3xl bg-gradient-to-br from-aps-navy/5 to-aps-magenta/5 border border-gray-100 p-6 md:p-8">
+            <h3 className="font-serif text-2xl font-bold text-aps-navy mb-4">Our Journey & Core Values</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-semibold text-aps-navy mb-2">Our Story</h4>
+                <p className="text-gray-700 text-sm leading-relaxed">
+                  Founded over two decades ago, Aryan Public School has grown from a small institution to a beacon of educational excellence. 
+                  What started as a vision to provide quality education in the region has today become a trusted name, nurturing thousands of young minds.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-aps-navy mb-2">Our Values</h4>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-aps-gold"></span>
+                    Excellence in academics
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-aps-magenta"></span>
+                    Character and integrity
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-aps-navy"></span>
+                    Respect for all
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
+                    Teamwork and collaboration
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

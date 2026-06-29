@@ -124,7 +124,7 @@ export default function HomePage() {
               Leadership Messages
             </h2>
           </div>
-          <div className="grid gap-6 md:gap-8 lg:grid-cols-2">
+          <div className="grid gap-6 md:gap-8 lg:grid-cols-3">
             <MessageCard
               title="Message from the Chairman"
               name="Mr. Lalit Thakur, Chairman, Aryan Public School"
@@ -136,6 +136,12 @@ export default function HomePage() {
               name="Mrs. Jyoti Rongta, Principal, Aryan Public School"
               images={IMAGES.principalSlideshow}
               preview="At Aryan Public School, we believe every child is unique. Our teachers work tirelessly to create an environment where students learn, grow, and excel with confidence."
+            />
+            <MessageCard
+              title="Message from the Chief Administrator"
+              name="Mrs. Shruti Thakur, Chief Administrator, Aryan Public School"
+              images={IMAGES.chiefAdministratorSlideshow}
+              preview="As Chief Administrator, I ensure the smooth functioning of our school operations and administrative excellence. Together, we strive to create a nurturing and disciplined environment for every student to thrive and achieve their goals."
             />
           </div>
         </div>

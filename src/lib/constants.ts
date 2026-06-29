@@ -11,6 +11,7 @@ export const SCHOOL = {
 export const IMAGES = {
   logo: "/images/logo.jpg",
   building: "/images/school.jpg",
+  aboutPage2: "/images/about_page_2.jpg",
   heroSlideshow: [
     "/images/hero-sec1.1.jpg",
     "/images/hero-sec2.3.jpg",
@@ -25,6 +26,15 @@ export const IMAGES = {
   principalSlideshow: [
     "/images/principle.jpg",
     "/images/Principle2.jpg",
+  ],
+  chiefAdministratorSlideshow: [
+    "/images/Chief_Administrator1.jpg",
+    "/images/Chief_Administrator2.jpg",
+  ],
+  brightStudentsSlideshow: [
+    "/images/about_page_3.jpg",
+    "/images/about_page_4.jpg",
+    "/images/about_page_5.jpg",
   ],
   staffGroup: "/images/staff.png",
   slideshow: [

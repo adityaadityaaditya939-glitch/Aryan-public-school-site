@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Slideshow } from "@/components/Slideshow";
 import { SCHOOL, IMAGES } from "@/lib/constants";
 
 export default function AboutPage() {
@@ -69,6 +70,37 @@ export default function AboutPage() {
           <p className="mt-4 text-center text-sm text-gray-500">
             Our dedicated team of educators
           </p>
+        </div>
+      </div>
+
+      <div className="mt-16">
+        <div className="relative mb-8 overflow-hidden rounded-3xl">
+          <Image
+            src={IMAGES.aboutPage2}
+            alt="School ground and national event"
+            width={1200}
+            height={500}
+            className="h-80 w-full object-cover md:h-96"
+          />
+        </div>
+        <div className="text-center">
+          <h2 className="font-serif text-3xl font-bold text-aps-navy mb-4">Our School Ground</h2>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            We organise national events in our school. This is the school ground where various activities, competitions, and national celebrations take place. Our spacious playground provides a perfect venue for fostering sportsmanship, teamwork, and national pride among our students.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-16">
+        <div className="text-center mb-8">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-aps-magenta mb-2">Student Achievements</p>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-aps-navy">Our Bright Students</h2>
+          <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
+            Our students excel not only in academics but also in sports, arts, and various co-curricular activities. They bring laurels to our school through their dedication, hard work, and remarkable achievements. We take pride in nurturing their talents and watching them grow into confident, responsible individuals.
+          </p>
+        </div>
+        <div className="max-w-4xl mx-auto">
+          <Slideshow images={IMAGES.brightStudentsSlideshow} />
         </div>
       </div>
     </div>

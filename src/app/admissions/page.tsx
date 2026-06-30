@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import AdmissionForm from "@/components/AdmissionForm";
 import { SCHOOL } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "Apply for Admission | Aryan Public School",
+  description: "Apply for admission at Aryan Public School in Kansakoti, Rohru, Shimla. Fill out our online admission form and start your child's educational journey with us.",
+  keywords: ["admission form", "apply for admission", "school admission", "Aryan Public School admission", "enroll now"],
+};
 
 export default function AdmissionsPage() {
   return (

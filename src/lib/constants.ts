@@ -36,6 +36,11 @@ export const IMAGES = {
     "/images/about_page_4.jpg",
     "/images/about_page_5.jpg",
   ],
+  culturalActivities: "/images/Cultural_Activites.jpg",
+  adventurousActivitiesSlideshow: [
+    "/images/Adventurous_activities.jpg",
+    "/images/Adventural_activities2.jpg",
+  ],
   staffGroup: "/images/staff.png",
   slideshow: [
     "/images/shorya.jpeg",

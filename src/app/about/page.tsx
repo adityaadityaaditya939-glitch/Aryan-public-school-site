@@ -135,6 +135,45 @@ export default function AboutPage() {
           <Slideshow images={IMAGES.brightStudentsSlideshow} />
         </div>
       </div>
+
+      <div className="mt-16 grid md:grid-cols-2 gap-8">
+        <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+          <div className="relative">
+            <Image
+              src={IMAGES.culturalActivities}
+              alt="Cultural Activities"
+              width={600}
+              height={400}
+              className="w-full h-64 object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-aps-navy/80 via-transparent to-transparent flex items-end p-6">
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-white">Cultural Activities</h3>
+            </div>
+          </div>
+          <div className="p-6 bg-white">
+            <p className="text-gray-700 leading-relaxed">
+              We believe in celebrating our rich cultural heritage through various activities like dance, music, drama, and art. Our students participate in annual functions, cultural festivals, and inter-school competitions, showcasing their talent and preserving our traditions. These activities help in developing creativity, confidence, and a sense of cultural pride among our students.
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-100">
+          <div className="relative h-64 lg:h-64">
+            <Slideshow 
+              images={IMAGES.adventurousActivitiesSlideshow} 
+              className="!h-full !rounded-none !border-none !shadow-none !hover:shadow-none lg:!h-full"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-aps-magenta/80 via-transparent to-transparent flex items-end p-6 pointer-events-none">
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-white">Adventurous Activities</h3>
+            </div>
+          </div>
+          <div className="p-6 bg-white">
+            <p className="text-gray-700 leading-relaxed">
+              Adventure is an integral part of our curriculum! We organize exciting activities like trekking, camping, rock climbing, and team-building exercises. These adventures help students step out of their comfort zones, develop leadership skills, build resilience, and create unforgettable memories while learning about nature and teamwork.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

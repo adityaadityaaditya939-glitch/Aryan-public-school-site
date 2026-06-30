@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback, useRef } from "react";
 
-export function Slideshow({ images }: { images: readonly string[] }) {
+export function Slideshow({ images, className = "" }: { images: readonly string[]; className?: string }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const touchStartX = useRef<number>(0);
@@ -52,7 +52,7 @@ export function Slideshow({ images }: { images: readonly string[] }) {
 
   return (
     <div
-      className="relative h-[300px] overflow-hidden rounded-[2.5rem] border-4 border-aps-navy/20 shadow-xl transition-all duration-300 hover:shadow-2xl lg:h-[500px] cursor-grab active:cursor-grabbing"
+      className={`relative h-[300px] overflow-hidden rounded-[2.5rem] border-4 border-aps-navy/20 shadow-xl transition-all duration-300 hover:shadow-2xl lg:h-[500px] cursor-grab active:cursor-grabbing ${className}`}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >

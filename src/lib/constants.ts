@@ -11,6 +11,7 @@ export const SCHOOL = {
 export const IMAGES = {
   logo: "/images/logo.jpg",
   building: "/images/school.jpg",
+  latestEventsPoster: "/images/New_poster.jpeg",
   aboutPage2: "/images/about_page_2.jpg",
   heroSlideshow: [
     "/images/hero-sec1.1.jpg",

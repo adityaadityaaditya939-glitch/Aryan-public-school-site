@@ -41,7 +41,7 @@ export default function HeroSection() {
 
   return (
     <section 
-      className="relative min-h-[85vh] overflow-hidden"
+      className="relative min-h-[60vh] overflow-hidden rounded-b-[3rem] md:rounded-b-[5rem]"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -70,7 +70,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-aps-navy/90 via-aps-navy/50 to-transparent md:bg-gradient-to-r md:from-aps-navy/95 md:via-aps-navy/40 md:to-transparent" />
       
       {/* Content container */}
-      <div className="relative mx-auto flex min-h-[85vh] max-w-7xl flex-col justify-center px-6 sm:px-8 lg:px-12 py-16 md:py-20">
+      <div className="relative mx-auto flex min-h-[60vh] max-w-7xl flex-col justify-center px-6 sm:px-8 lg:px-12 py-16 md:py-20">
         <div className="space-y-6 md:space-y-8">
           {/* Badge */}
           <div className="animate-in slide-in-from-left duration-700 ease-out">

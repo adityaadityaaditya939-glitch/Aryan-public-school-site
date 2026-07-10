@@ -57,7 +57,25 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="py-16 md:py-20" delay={100}>
+      <AnimatedSection className="mx-auto max-w-7xl px-4 py-16 md:py-20 lg:px-8" delay={100}>
+        <div className="text-center mb-8 md:mb-12">
+          <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-aps-magenta mb-2">Latest Events</p>
+          <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-aps-navy">
+            Events Poster
+          </h2>
+        </div>
+        <div className="overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-2xl">
+          <Image
+            src={IMAGES.latestEventsPoster}
+            alt="Latest Events Poster"
+            width={1200}
+            height={800}
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      </AnimatedSection>
+
+      <AnimatedSection className="py-16 md:py-20" delay={200}>
         <div className="relative">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-aps-navy/5 to-transparent" />
           <div className="relative mx-auto max-w-7xl px-4 lg:px-8">
@@ -87,7 +105,7 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="mx-auto max-w-7xl px-4 py-16 md:py-20 lg:px-8" delay={200}>
+      <AnimatedSection className="mx-auto max-w-7xl px-4 py-16 md:py-20 lg:px-8" delay={300}>
         <div className="text-center mb-8 md:mb-12">
           <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-aps-magenta mb-2">Our Approach</p>
           <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-aps-navy">
@@ -116,7 +134,7 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="py-16 md:py-20" delay={300}>
+      <AnimatedSection className="py-16 md:py-20" delay={400}>
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="text-center mb-8 md:mb-12">
             <p className="text-xs md:text-sm font-semibold uppercase tracking-wider text-aps-magenta mb-2">Leadership</p>
@@ -147,7 +165,7 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="mx-auto max-w-7xl px-4 py-16 md:py-20 lg:px-8" delay={400}>
+      <AnimatedSection className="mx-auto max-w-7xl px-4 py-16 md:py-20 lg:px-8" delay={500}>
         <h2 className="text-center font-serif text-2xl md:text-3xl lg:text-4xl font-bold text-aps-navy mb-8 md:mb-10">
           Important Announcements & Links
         </h2>
@@ -156,7 +174,7 @@ export default function HomePage() {
         </div>
       </AnimatedSection>
 
-      <AnimatedSection className="py-20 md:py-24" delay={500}>
+      <AnimatedSection className="py-20 md:py-24" delay={600}>
         <div className="relative overflow-hidden bg-aps-navy">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_20%,rgba(156,23,105,0.3),transparent_50%)]" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_90%_80%,rgba(245,184,0,0.2),transparent_50%)]" />

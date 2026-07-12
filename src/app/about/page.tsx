@@ -97,7 +97,7 @@ export default function AboutPage() {
             alt="School staff"
             width={400}
             height={500}
-            className="rounded-2xl object-cover shadow-lg"
+            className="rounded-2xl object-cover shadow-lg w-full h-auto"
           />
           <p className="mt-4 text-center text-sm text-gray-500">
             Our dedicated team of educators

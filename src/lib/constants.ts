@@ -42,7 +42,7 @@ export const IMAGES = {
     "/images/Adventurous_activities.jpg",
     "/images/Adventural_activities2.jpg",
   ],
-  staffGroup: "/images/staff.png",
+  staffGroup: "/images/Teacher_staff_updated.jpeg",
   slideshow: [
     "/images/shorya.jpeg",
     "/images/Sportsachievements.jpg",

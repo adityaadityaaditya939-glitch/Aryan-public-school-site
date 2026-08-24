@@ -38,6 +38,7 @@ export const IMAGES = {
     "/images/about_page_5.jpg",
   ],
   culturalActivities: "/images/Cultural_Activites.jpg",
+  sportsEventsPoster: "/images/Sports_Events.jpeg",
   adventurousActivitiesSlideshow: [
     "/images/Adventurous_activities.jpg",
     "/images/Adventural_activities2.jpg",

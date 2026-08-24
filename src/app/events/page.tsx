@@ -52,6 +52,84 @@ export default function EventsPage() {
         </p>
       </div>
 
+      {/* Featured Sports Event */}
+      <div className="mb-12 overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-xl">
+        <div className="relative h-64 md:h-80 overflow-hidden">
+          <Image
+            src={IMAGES.sportsEventsPoster}
+            alt="Rohru Block U-14 Boys/Girls School Sports Games 2026-27"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-aps-navy/90 via-aps-navy/50 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+            <div className="mb-4 inline-block rounded-full bg-aps-gold px-4 py-2 text-xs font-bold text-aps-navy">
+              Featured Event
+            </div>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold text-white">
+              ROHRU BLOCK U-14 BOYS / GIRLS SCHOOL SPORTS GAMES - 2026-27
+            </h2>
+          </div>
+        </div>
+        <div className="p-6 md:p-8">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mb-6">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-aps-gold/20">
+                <svg className="h-5 w-5 text-aps-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500">Date</p>
+                <p className="font-semibold text-aps-navy">07-12 September 2026</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-aps-gold/20">
+                <svg className="h-5 w-5 text-aps-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500">Location</p>
+                <p className="font-semibold text-aps-navy">Tehsil Rohru, District Shimla, H.P.</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-aps-gold/20">
+                <svg className="h-5 w-5 text-aps-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <div>
+                <p className="text-xs text-gray-500">Organizer</p>
+                <p className="font-semibold text-aps-navy">Aryan Public School Kansakoti</p>
+              </div>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+              We are proud to host the <strong>Rohru Block U-14 Boys/Girls School Sports Games 2026-27</strong> under the aegis of District Shimla School Sports Association. This exciting sporting event brings together young athletes from across the region to compete in various disciplines and showcase their talent.
+            </p>
+            <p className="text-sm md:text-base text-gray-600 leading-relaxed">
+              The event will feature competitions for both boys and girls under the age of 14, promoting sportsmanship, teamwork, and healthy competition among students. Join us as we celebrate the spirit of sports and witness the future stars of athletics.
+            </p>
+            <div className="mt-6">
+              <p className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-3">Event Partners & Sponsors</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="inline-flex items-center rounded-full bg-aps-gold/10 px-3 py-1 text-xs font-medium text-aps-navy">Paoma Printing Press</span>
+                <span className="inline-flex items-center rounded-full bg-aps-gold/10 px-3 py-1 text-xs font-medium text-aps-navy">Fishta Royal Caterer</span>
+                <span className="inline-flex items-center rounded-full bg-aps-gold/10 px-3 py-1 text-xs font-medium text-aps-navy">JVN Vision TV</span>
+                <span className="inline-flex items-center rounded-full bg-aps-gold/10 px-3 py-1 text-xs font-medium text-aps-navy">World Power Gym Rohru</span>
+                <span className="inline-flex items-center rounded-full bg-aps-gold/10 px-3 py-1 text-xs font-medium text-aps-navy">ASW (Arman's Sports World)</span>
+                <span className="inline-flex items-center rounded-full bg-aps-gold/10 px-3 py-1 text-xs font-medium text-aps-navy">Gangotwal International</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
         {dummyEvents.map((event) => (
           <article

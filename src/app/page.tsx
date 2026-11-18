@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
+import HighlightsSection from "@/components/HighlightsSection";
 import MessageCard from "@/components/MessageCard";
 import AnnouncementsList from "@/components/AnnouncementsList";
 import { Slideshow } from "@/components/Slideshow";
@@ -25,6 +26,10 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+
+      <AnimatedSection className="py-16 md:py-20">
+        <HighlightsSection />
+      </AnimatedSection>
 
       <AnimatedSection className="mx-auto max-w-7xl px-4 py-16 md:py-20 lg:px-8">
         <div className="overflow-hidden rounded-3xl bg-white shadow-2xl transition-all duration-500 hover:shadow-[0_0_60px_rgba(27,42,107,0.15)] border border-gray-100">

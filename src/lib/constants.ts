@@ -44,6 +44,13 @@ export const IMAGES = {
     "/images/Adventural_activities2.jpg",
   ],
   staffGroup: "/images/Teacher_staff_updated.jpeg",
+  highlightsSlideshow: [
+    "/images/Highlights/Highlight_1.jpeg",
+    "/images/Highlights/Highlight_2.jpeg",
+    "/images/Highlights/Highlight_3.jpeg",
+    "/images/Highlights/Highlight_4.jpeg",
+    "/images/Highlights/Highlight_5.jpeg",
+  ],
   slideshow: [
     "/images/shorya.jpeg",
     "/images/Sportsachievements.jpg",
